@@ -20,9 +20,18 @@ def test_calc_log():
         calculate_logarithm(8, 0)
 
 
-def test_reverse_string_numbers(numbers):
-    assert reverse_string('123') == numbers
+@pytest.mark.parametrize('value, expected', [
+    ('123', '321'),
+    ('hello', 'olleh'),
+    ('world', 'dlrow')
+])
+def test_revers_string(value, expected):
+    assert reverse_string(value) == expected
 
 
-def test_reverse_string_letter(letters):
-    assert reverse_string('hello') == letters
+# def test_reverse_string_numbers(numbers):
+#     assert reverse_string('123') == numbers
+#
+#
+# def test_reverse_string_letter(letters):
+#     assert reverse_string('hello') == letters
